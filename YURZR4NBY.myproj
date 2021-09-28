@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f8ad0f06-e45d-4d70-ad34-83a7204bfc16}</ProjectGuid>
+    <ProjectType>CopernicusProject</ProjectType>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>YURZR4NBY</Name>
+    <RootNamespace>YURZR4NBY</RootNamespace>
+    <RepositoryNamespace>http://0050040694-one-off.sap.com/YURZR4NBY_</RepositoryNamespace>
+    <RuntimeNamespacePrefix>YURZR4NBY_</RuntimeNamespacePrefix>
+    <RepositoryRootFolder>/YURZR4NBY_MAIN</RepositoryRootFolder>
+    <DefaultProcessComponent>YURZR4NBY_YURZR4NBY</DefaultProcessComponent>
+    <DevelopmentPackage>$YURZR4NBY_DEV</DevelopmentPackage>
+    <XRepSolution>YURZR4NBY_MAIN</XRepSolution>
+    <BCSourceFolderInXRep>/YURZR4NBY_BC/SRC</BCSourceFolderInXRep>
+    <ProjectSourceFolderinXRep>/YURZR4NBY_MAIN/SRC</ProjectSourceFolderinXRep>
+    <DeploymentUnit>FOUNDATION</DeploymentUnit>
+    <CompilerVersion>1302_FP15</CompilerVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="LetteringItem-Root-Action-RemoveLetteringGroup.absl">
+      <DependentUpon>LetteringItem-Root.node</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="LetteringItem-Root-Event-BeforeSave.absl">
+      <DependentUpon>LetteringItem-Root.node</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="LetteringItem-Root.node">
+      <DependentUpon>LetteringItem.bo</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="LetteringItem.bo">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="LetteringItemIntegrationXML-Input-In.sadl">
+      <IsHidden>TRUE</IsHidden>
+      <DependentUpon>LetteringItemIntegrationXML.pid</DependentUpon>
+    </Content>
+    <Content Include="LetteringItemIntegrationXML.pid">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="LetteringItem_Datasource01.ds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="NumberRangeHelper-Root-Action-NextNumberRange.absl">
+      <DependentUpon>NumberRangeHelper-Root.node</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="NumberRangeHelper-Root.node">
+      <DependentUpon>NumberRangeHelper.bo</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="NumberRangeHelper.bo">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="YURZR4NBY_0048B9400ADD6C.report">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="YURZR4NBY_9A3DA3D30C8821.jds">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BCSet Include="..\YURZR4NBY_BC\BACElements.bac">
+      <SubType>BCSet</SubType>
+    </BCSet>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

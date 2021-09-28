@@ -1,0 +1,23 @@
+﻿/*
+	Add your SAP Business ByDesign scripting language implementation for:
+		Business Object: LetteringItem
+		Node: Root
+		Action: RemoveLetteringGroup 
+		
+	Note: 
+	  - To access the elements of the business object node, 
+	    use path expressions, for example, this.<element name>. 
+	  - To use code completion, press CTRL+J. 
+	   
+*/
+
+import ABSL;
+//LetteringItem.QueryByElements.Execute().Delete();//pour tout vider
+
+var query = LetteringItem.QueryByElements;
+var params = query.CreateSelectionParams();
+params.Add(query.LetteringGroupe ,"I","EQ",this.LetteringGroupe);
+var result = query.Execute(params);
+foreach(var entry in result){
+	entry.Delete();
+}

@@ -1,0 +1,28 @@
+﻿import AP.Common.GDT as apCommonGDT;
+import AP.FinancialAccounting.Global;
+
+businessobject LetteringItem {
+
+       element LetteringItemID : ID;
+
+	   element JournalEntryID : BusinessTransactionDocumentID;
+	   element JournalEntryItemID : BusinessTransactionDocumentItemID;
+	   element GLAccount : GeneralLedgerAccountKey;
+	   element OperationalDocumentID :ObjectNodeFormattedID ;
+
+	   element FiscalYear:Year;
+	   element SetOfBooks:LANGUAGEINDEPENDENT_SHORT_Name;
+
+	   element Note : SHORT_Note;
+
+	   	[Label("Groupe de Lettrage")]
+		element LetteringGroupe : LANGUAGEINDEPENDENT_MEDIUM_Name;
+		element isManual:Indicator;
+
+		
+		element CreatedBy : LANGUAGEINDEPENDENT_MEDIUM_Name;
+		element CreationDate : LOCAL_DateTime;
+
+		action RemoveLetteringGroup;
+	
+}
